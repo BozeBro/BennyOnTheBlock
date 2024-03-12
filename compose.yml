@@ -1,0 +1,18 @@
+version: '3'
+services:
+  chain:
+    image: "golang:latest"
+    build: ./ChainReaction
+    networks:
+      main:
+  proxy:
+    build: .
+    ports:
+      - 80:80
+    depends_on:
+      - chain
+    networks:
+      main:
+networks:
+  main:
+
