@@ -1,6 +1,7 @@
 [submodule "MyBlog"]
 	path = MyBlog
 	url = https://github.com/BozeBro/MyBlog
+	branch = dockerPath
 [submodule "ChainReaction"]
 	path = ChainReaction
 	url = https://github.com/BozeBro/ChainReaction

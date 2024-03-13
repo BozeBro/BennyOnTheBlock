@@ -1,7 +1,6 @@
 version: '3'
 services:
   chain:
-    image: "golang:latest"
     build: ./ChainReaction
     networks:
       main:
@@ -11,8 +10,17 @@ services:
       - 80:80
     depends_on:
       - chain
+      - blog
+    networks:
+      main:
+  blog:
+    build: 
+      context: ./MyBlog
+      args:
+        config: prod.yml
     networks:
       main:
 networks:
   main:
+    driver: bridge
 

@@ -1,14 +1,13 @@
-FROM nginx:1.14.2
+FROM nginx:latest
 
-WORKDIR /proxy
+WORKDIR /etc/nginx
 
-COPY nginx.conf nginx.conf
-COPY mime.types mime.types
-COPY MyBlog MyBlog
+
+RUN rm -rf /etc/nginx/conf.d
+COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 80
-EXPOSE 88
 
 # -g daemon off runs nginx in the foreground instead of the background. nginx daemon is turned off
 # trust docker daemon
-CMD nginx -c ./nginx.conf -p . -g 'daemon off;'
+CMD nginx -g 'daemon off;'
