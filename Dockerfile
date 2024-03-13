@@ -4,7 +4,7 @@ WORKDIR /etc/nginx
 
 
 RUN rm -rf /etc/nginx/conf.d
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf nginx.conf
 
 EXPOSE 80
 
